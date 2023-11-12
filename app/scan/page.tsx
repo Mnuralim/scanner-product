@@ -40,7 +40,8 @@ const Page: React.FC = () => {
   return (
     <div className="bg-white relative h-screen pt-12">
       <div id="reader"></div>
-      {scanResult && <ProductCard product={product} />}
+      {filterProduct.length === 0 && <p>Produk ini tidak masuk daftar boikot</p>}
+      {scanResult && filterProduct.length !== 0 && <ProductCard product={product} />}
     </div>
   );
 };
