@@ -15,7 +15,7 @@ const Page = () => {
         },
         fps: 5,
       },
-      undefined
+      true
     );
 
     scanner.render(success, error);
