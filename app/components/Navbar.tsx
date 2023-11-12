@@ -10,16 +10,16 @@ const Navbar = () => {
       <nav className="container px-6 py-4 mx-auto md:px-12">
         <div className="items-center justify-center md:flex">
           <div className={`items-center flex`}>
-            <Link href={"/"} className={`mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
+            <Link href={"/"} className={`mx-3 text-lg  uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
               Beranda
             </Link>
-            <Link href={"/search"} className={`mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
+            <Link href={"/search"} className={`mx-3 text-lg  uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
               Cari
             </Link>
-            <Link href={"/scan"} className={`mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
+            <Link href={"/scan"} className={`mx-3 text-lg uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
               Scan
             </Link>
-            <Link href={"/"} className={`mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
+            <Link href={"/"} className={`mx-3 text-lg  uppercase cursor-pointer hover:text-gray-300 ${pathName === "/scan" ? "text-black" : "text-white"}`}>
               Tentang
             </Link>
           </div>

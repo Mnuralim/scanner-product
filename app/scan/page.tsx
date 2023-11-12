@@ -2,10 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import products from "@/data/data";
+import Result from "./components/Result";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
   const filterProduct = products.filter((el) => el.qr.toLowerCase().includes(scanResult as string));
+  const product = filterProduct[0];
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
@@ -38,7 +40,7 @@ const Page: React.FC = () => {
   return (
     <div className="bg-white relative h-screen pt-12">
       <div id="reader"></div>
-      {scanResult && filterProduct.map((p) => <p key={p.id}>{p.name}</p>)}
+      {scanResult && <Result product={product} />}
     </div>
   );
 };
