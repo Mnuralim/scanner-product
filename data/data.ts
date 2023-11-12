@@ -159,6 +159,14 @@ const products = [
     qr: "",
     desc: "lorem ipsum dolor",
   },
+  {
+    id: 21,
+    name: "Aqua ",
+    url: "https://www.logolynx.com/images/logolynx/fd/fd4aa0d0148cf904b4430c989b68b528.jpeg  ",
+    asal: "Amerika Syarikat",
+    qr: "8886008101053",
+    desc: "lorem ipsum dolor",
+  },
 ];
 
 export default products;

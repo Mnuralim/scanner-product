@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-indigo-900`}>
-        <Image width={10000} height={10000} alt="cover" src="/images/cover.jpg" className="absolute object-cover w-full h-full" />
+      <body className={`${inter.className} bg-indigo-900 bg-my-cover bg-center bg-cover bg-fixed`}>
         <div className="absolute inset-0 bg-black opacity-25"></div>
         <Navbar />
         {children}

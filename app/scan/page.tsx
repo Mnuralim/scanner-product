@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
+import products from "@/data/data";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
+  const filterProduct = products.filter((el) => el.qr.toLowerCase().includes(scanResult as string));
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
@@ -28,7 +30,6 @@ const Page: React.FC = () => {
       console.warn(err);
     }
 
-    // Cleanup when the component unmounts
     return () => {
       scanner.clear();
     };
@@ -37,7 +38,7 @@ const Page: React.FC = () => {
   return (
     <div className="bg-white relative h-screen">
       <div id="reader"></div>
-      {scanResult && <p>{scanResult}</p>}
+      {scanResult && filterProduct.map((p) => <p key={p.id}>{p.name}</p>)}
     </div>
   );
 };
