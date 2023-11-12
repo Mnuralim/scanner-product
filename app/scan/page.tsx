@@ -12,8 +12,8 @@ const Page: React.FC = () => {
       "reader",
       {
         qrbox: {
-          width: 1000,
-          height: 1000,
+          width: 250,
+          height: 250,
         },
         fps: 5,
       },
