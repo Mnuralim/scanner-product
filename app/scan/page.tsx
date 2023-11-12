@@ -38,7 +38,7 @@ const Page: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white relative h-screen pt-12">
+    <div className="bg-white relative h-screen pt-20">
       <div id="reader"></div>
       {filterProduct.length === 0 && <p>Produk ini tidak masuk daftar boikot</p>}
       {scanResult && filterProduct.length !== 0 && <ProductCard product={product} />}

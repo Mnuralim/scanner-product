@@ -20,7 +20,6 @@ const Page = () => {
     <div className="relative h-screen ">
       <Form name={name} setName={setName} handleSearch={handleSearch} />
       {allProducts.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk daftar boikot</p>}
-
       <div className="grid grid-cols-1 gap-2 md:grid-cols-4 mx-auto">
         {allProducts.map((data) => (
           <ProductCard key={data.id} product={data} />
