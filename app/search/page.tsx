@@ -16,7 +16,7 @@ const Page = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden flex flex-col items-center justify-center">
+    <div className="relative h-screen flex flex-col items-center justify-center">
       <Form name={name} setName={setName} handleSearch={handleSearch} />
       {allProducts.map((data) => (
         <p className="text-white" key={data.id}>

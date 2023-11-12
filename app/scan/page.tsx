@@ -36,7 +36,7 @@ const Page: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white relative h-screen">
+    <div className="bg-white relative h-screen pt-12">
       <div id="reader"></div>
       {scanResult && filterProduct.map((p) => <p key={p.id}>{p.name}</p>)}
     </div>
