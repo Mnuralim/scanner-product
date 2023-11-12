@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 
-const Page = () => {
-  const [scanResult, setScanResult] = useState(null);
+const Page: React.FC = () => {
+  const [scanResult, setScanResult] = useState<string | null>(null);
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
@@ -20,13 +20,18 @@ const Page = () => {
 
     scanner.render(success, error);
 
-    function success(result) {
+    function success(result: string) {
       scanner.clear();
       setScanResult(result);
     }
-    function error(err) {
+    function error(err: any) {
       console.warn(err);
     }
+
+    // Cleanup when the component unmounts
+    return () => {
+      scanner.clear();
+    };
   }, []);
 
   return (
