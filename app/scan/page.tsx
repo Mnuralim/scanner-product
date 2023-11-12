@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import products from "@/data/data";
 import ProductCard from "../components/ProductCard";
+import Result from "./components/Result";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
@@ -38,10 +39,12 @@ const Page: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white relative h-screen pt-20">
-      <div id="reader"></div>
-      {filterProduct.length === 0 && <p>Produk ini tidak masuk daftar boikot</p>}
-      {scanResult && filterProduct.length !== 0 && <ProductCard product={product} />}
+    <div className="pt-20">
+      <div className="bg-white bg-opacity-30">
+        <div id="reader" className="p-5"></div>
+      </div>
+      {scanResult && filterProduct.length === 0 && <p>Produk ini tidak masuk daftar boikot</p>}
+      {scanResult && filterProduct.length !== 0 && <Result setScanResult={setScanResult} product={product} />}
     </div>
   );
 };
