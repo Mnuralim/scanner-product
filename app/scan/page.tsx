@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import products from "@/data/data";
-import Result from "./components/Result";
+import ProductCard from "../components/ProductCard";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
@@ -40,7 +40,7 @@ const Page: React.FC = () => {
   return (
     <div className="bg-white relative h-screen pt-12">
       <div id="reader"></div>
-      {scanResult && <Result product={product} />}
+      {scanResult && <ProductCard product={product} />}
     </div>
   );
 };

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
 import products from "@/data/data";
+import ProductCard from "../components/ProductCard";
 
 const Page = () => {
   const [name, setName] = useState<string>("");
@@ -16,13 +17,13 @@ const Page = () => {
   };
 
   return (
-    <div className="relative h-screen flex flex-col items-center justify-center">
+    <div className="relative h-screen ">
       <Form name={name} setName={setName} handleSearch={handleSearch} />
-      {allProducts.map((data) => (
-        <p className="text-white" key={data.id}>
-          {data.name}
-        </p>
-      ))}
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-4 mx-auto">
+        {allProducts.map((data) => (
+          <ProductCard key={data.id} product={data} />
+        ))}
+      </div>
     </div>
   );
 };
