@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import products from "@/data/data";
-import ProductCard from "../components/ProductCard";
 import Result from "./components/Result";
 
 const Page: React.FC = () => {
@@ -39,12 +38,17 @@ const Page: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 relative">
       <div className="bg-white bg-opacity-30">
         <div id="reader" className="p-5"></div>
       </div>
-      {scanResult && filterProduct.length === 0 && <p>Produk ini tidak masuk daftar boikot</p>}
       {scanResult && filterProduct.length !== 0 && <Result setScanResult={setScanResult} product={product} />}
+      {scanResult && filterProduct.length === 0 && <p className="text-white  bg-black px-2 mx-2 text-center font-bold">Produk ini tidak masuk daftar boikot</p>}
+      {scanResult && (
+        <button onClick={() => setScanResult(null)} className="mt-3 text-white">
+          Kembali
+        </button>
+      )}
     </div>
   );
 };
