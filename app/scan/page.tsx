@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import products from "@/data/data";
 import Result from "./components/Result";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
+  const router = useRouter();
   const filterProduct = products.filter((el) => el.qr.toLowerCase().includes(scanResult as string));
   const product = filterProduct[0];
 
@@ -45,9 +48,9 @@ const Page: React.FC = () => {
       {scanResult && filterProduct.length !== 0 && <Result setScanResult={setScanResult} product={product} />}
       {scanResult && filterProduct.length === 0 && <p className="text-white  bg-black px-2 mx-2 text-center font-bold">Produk ini tidak masuk daftar boikot</p>}
       {scanResult && (
-        <button onClick={() => setScanResult(null)} className="mt-3 text-white">
+        <Link href={"/"} className="mt-3 text-white">
           Kembali
-        </button>
+        </Link>
       )}
     </div>
   );
