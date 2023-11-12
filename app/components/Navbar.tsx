@@ -19,7 +19,7 @@ const Navbar = () => {
             <Link href={"/scan"} className="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
               Scan
             </Link>
-            <Link href={"/"} className="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
+            <Link href={"/about"} className="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
               Tentang
             </Link>
           </div>
