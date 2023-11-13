@@ -25,13 +25,15 @@ const Page = () => {
   if (isLoading) return <p>loading...</p>;
 
   return (
-    <div className="absolute">
-      <Form name={name} setName={setName} handleSearch={handleSearch} />
-      {product.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk daftar boikot</p>}
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-4 mx-auto">
-        {product?.map((data) => (
-          <ProductCard key={data._id} product={data} />
-        ))}
+    <div className="relative flex justify-center w-full">
+      <div>
+        <Form name={name} setName={setName} handleSearch={handleSearch} />
+        {product.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk daftar boikot</p>}
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-4 ">
+          {product?.map((data) => (
+            <ProductCard key={data._id} product={data} />
+          ))}
+        </div>
       </div>
     </div>
   );

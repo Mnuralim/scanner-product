@@ -8,8 +8,8 @@ interface Props {
 
 const Form = ({ name, setName, handleSearch }: Props) => {
   return (
-    <form onSubmit={handleSearch} className="flex items-center justify-center gap-2 mt-16 mb-5 px-2">
-      <div className=" relative w-full md:max-w-md">
+    <form onSubmit={handleSearch} className="flex items-center justify-center gap-2 mt-16 mb-5 px-2 self-center">
+      <div className="relative w-full md:max-w-md">
         <input
           type="text"
           id="name"
