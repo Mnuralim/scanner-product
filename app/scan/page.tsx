@@ -1,16 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import products from "@/data/data";
 import Result from "./components/Result";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { KeyedMutator } from "swr";
+import { useProduct } from "@/utils/swr";
 
 const Page: React.FC = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
-  const router = useRouter();
-  const filterProduct = products.filter((el) => el.qr.toLowerCase().includes(scanResult as string));
-  const product = filterProduct[0];
+  const { product, isLoading, mutate }: { product: IProduct[]; isLoading: boolean; mutate: KeyedMutator<any> } = useProduct(scanResult as string);
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
@@ -45,8 +43,8 @@ const Page: React.FC = () => {
       <div className="bg-white bg-opacity-30">
         <div id="reader" className="p-5"></div>
       </div>
-      {scanResult && filterProduct.length !== 0 && <Result setScanResult={setScanResult} product={product} />}
-      {scanResult && filterProduct.length === 0 && <p className="text-white  bg-black px-2 mx-2 text-center font-bold">Produk ini tidak masuk daftar boikot</p>}
+      {scanResult && product && <Result setScanResult={setScanResult} product={product} />}
+      {scanResult && !product && <p className="text-white  bg-black px-2 mx-2 text-center font-bold">Produk ini tidak masuk daftar boikot</p>}
       {scanResult && (
         <Link href={"/"} className="mt-3 text-white">
           Kembali
