@@ -7,7 +7,7 @@ const Navbar = () => {
   const pathName = usePathname();
   return (
     <header className="absolute top-0 left-0 w-full z-20">
-      <nav className="flex flex-wrap justify-between items-center px-3 gap-3 mt-3 md:justify-center md:gap-14">
+      <nav className="flex flex-wrap justify-center items-center px-3 gap-3 mt-5 md:justify-center md:gap-14">
         <Link href={"/"} className="text-sm md:text-lg text-white uppercase cursor-pointer hover:text-gray-300">
           Beranda
         </Link>
