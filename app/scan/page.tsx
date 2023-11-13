@@ -39,7 +39,7 @@ const Page: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-20 relative">
+    <div className="pt-20 relative mx-3">
       <div className="bg-white bg-opacity-30">
         <div id="reader" className="p-5"></div>
       </div>
