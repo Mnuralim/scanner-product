@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Form from "./components/Form";
-import products from "@/data/data";
 import ProductCard from "../components/ProductCard";
 import { useProduct } from "@/utils/swr";
 import { KeyedMutator } from "swr";
@@ -9,7 +8,6 @@ import { KeyedMutator } from "swr";
 const Page = () => {
   const [name, setName] = useState<string>("");
   const [query, setQuery] = useState<string>("");
-  const [allProducts, setAllProducts] = useState(products);
 
   const { product, isLoading, mutate }: { product: IProduct[]; isLoading: boolean; mutate: KeyedMutator<any> } = useProduct(undefined, { name: query });
   console.log(product);
