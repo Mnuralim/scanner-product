@@ -36,7 +36,7 @@ const Page = () => {
         {product?.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk daftar boikot</p>}
         <div className="grid grid-cols-1 gap-3 md:grid-cols-4 ">
           {product?.map((data) => (
-            <ProductCard key={data._id} product={data} isLoading={isLoading} />
+            <ProductCard key={data._id} product={data} />
           ))}
         </div>
       </div>
