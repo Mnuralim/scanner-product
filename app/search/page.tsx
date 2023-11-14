@@ -8,17 +8,22 @@ import { KeyedMutator } from "swr";
 const Page = () => {
   const [name, setName] = useState<string>("");
   const [query, setQuery] = useState<string>("");
+  const [limit, setLimit] = useState<string>("50");
 
-  const { product, isLoading, mutate }: { product: IProduct[]; isLoading: boolean; mutate: KeyedMutator<any> } = useProduct(undefined, { name: query });
+  const { product, isLoading, mutate }: { product: IProduct[]; isLoading: boolean; mutate: KeyedMutator<any> } = useProduct(undefined, { name: query, limit });
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (name) {
+      setLimit("3000");
       setQuery(name);
     } else {
+      setLimit("50");
       setQuery("");
     }
   };
+
+  console.log(limit);
 
   if (isLoading || !product)
     return (
