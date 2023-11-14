@@ -3,4 +3,5 @@ interface IProduct {
   name: string;
   imageUrl: string;
   qrId: string;
+  brand?: string;
 }
