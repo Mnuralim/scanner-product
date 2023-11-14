@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .containerx {
-  --uib-size: 55px;
-  --uib-color: black;
+  --uib-size: 100spx;
+  --uib-color: white;
   --uib-speed: 1.3s;
   --uib-bg-opacity: 0.1;
   height: calc(var(--uib-size) * (2.1 / 5));
