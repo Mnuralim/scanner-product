@@ -23,7 +23,7 @@ const Page = () => {
   if (isLoading || !product)
     return (
       <div className="h-screen inset-0 bg-black bg-opacity-40 w-full flex items-center justify-center">
-        <svg className="container" x="0px" y="0px" viewBox="0 0 55 23.1" height="23.1" width="55" preserveAspectRatio="xMidYMid meet">
+        <svg className="containerx" x="0px" y="0px" viewBox="0 0 55 23.1" height="23.1" width="55" preserveAspectRatio="xMidYMid meet">
           <path
             className="track"
             fill="none"

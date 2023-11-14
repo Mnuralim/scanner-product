@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
+.containerx {
   --uib-size: 55px;
   --uib-color: black;
   --uib-speed: 1.3s;
