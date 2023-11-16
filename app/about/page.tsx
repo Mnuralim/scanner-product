@@ -2,25 +2,24 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="mt-14 rounded-md shadow-md flex justify-center w-full px-2 overflow-x-hidden">
+    <div className="mt-14 relative rounded-md shadow-md flex justify-center w-full px-2 overflow-x-hidden">
       <div className="w-full md:max-w-2xl bg-white bg-opacity-70 p-6 rounded">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h1>
-        <p className="text-gray-700 mb-4">Selamat datang di situs web kami! Kami adalah komunitas yang mendukung konsumenisme etis dan percaya pada membuat pilihan yang terinformasi ketika datang ke dukungan terhadap bisnis dan produk.</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">Hai, Selamat Datang di Situs Kami!</h1>
         <p className="text-gray-700 mb-4">
-          Misi kami adalah untuk meningkatkan kesadaran tentang produk atau perusahaan yang mungkin terlibat dalam praktik yang merugikan bagi masyarakat, lingkungan, atau melanggar standar etika. Dengan memboikot produk tersebut, kami
-          bertujuan untuk mendorong praktik bisnis yang bertanggung jawab dan berkelanjutan.
+          Jadi, kita adalah komunitas yang punya pandangan tentang cara belanja yang benar dan mendukung produk yang sesuai dengan nilai-nilai keadilan dan hak asasi manusia. Nah, kita punya misi untuk mengingatkan orang-orang tentang
+          produk atau perusahaan yang mendukung Israel dan mungkin terlibat dalam hal-hal yang tidak benar untuk masyarakat atau kontroversial terkait hak asasi manusia.
         </p>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Mengapa Boikot?</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Kenapa Kita Boikot?</h2>
         <p className="text-gray-700 mb-4">
-          Boikot adalah alat yang kuat untuk menyatakan ketidakpuasan terhadap tindakan atau kebijakan suatu perusahaan. Ini mengirim pesan jelas bahwa konsumen peduli tentang pertimbangan etis dan bersedia membuat pilihan sesuai dengan
-          nilai-nilai mereka.
+          Kita pikir boikot itu cara ampuh untuk menunjukkan ketidaksetujuan terhadap tindakan atau dukungan suatu perusahaan terhadap Israel, yang bisa menimbulkan masalah bagi sebagian orang. Dengan boikot, kita ingin mengatakan kepada
+          perusahaan-perusahaan itu bahwa kita peduli tentang keadilan sosial dan hak asasi manusia.
         </p>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Terlibatlah</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Yuk, Ikutan!</h2>
         <p className="text-gray-700 mb-4">
-          Kami mengajak Anda bergabung dengan komunitas kami dan tetap terinformasi tentang konsumenisme yang bertanggung jawab. Dengan berbagi informasi, meningkatkan kesadaran, dan membuat pilihan etis bersama-sama, kita dapat
-          berkontribusi pada dunia yang lebih berkelanjutan dan adil.
+          Kita ajak kamu untuk bergabung dalam komunitas kita agar bisa tahu lebih banyak tentang gerakan boikot yang sedang kita lakukan. Dengan saling berbagi informasi, meningkatkan kesadaran, dan membuat pilihan belanja yang benar, kita
+          bisa membantu membuat dunia menjadi tempat yang lebih baik.
         </p>
-        <p className="text-gray-700 mb-4">Bersama-sama, kita dapat membuat perubahan. Terima kasih telah menjadi bagian dari gerakan kami!</p>
+        <p className="text-gray-700 mb-4">Kita percaya, bersama-sama, kita bisa membawa perubahan positif. Terima kasih telah menjadi bagian dari gerakan kami!</p>
       </div>
     </div>
   );

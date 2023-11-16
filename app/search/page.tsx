@@ -8,22 +8,23 @@ import { KeyedMutator } from "swr";
 const Page = () => {
   const [name, setName] = useState<string>("");
   const [query, setQuery] = useState<string>("");
-  const [limit, setLimit] = useState<string>("50");
+  const [limit, setLimit] = useState<string>("1");
+  const [showList, setShowList] = useState<boolean>(false);
 
   const { product, isLoading, mutate }: { product: IProduct[]; isLoading: boolean; mutate: KeyedMutator<any> } = useProduct(undefined, { name: query, limit });
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (name) {
+      setShowList(true);
       setLimit("3000");
       setQuery(name);
     } else {
-      setLimit("50");
+      setLimit("1");
       setQuery("");
+      setShowList(false);
     }
   };
-
-  console.log(limit);
 
   if (isLoading || !product)
     return (
@@ -50,12 +51,16 @@ const Page = () => {
     <div className="relative flex justify-center w-full">
       <div>
         <Form name={name} setName={setName} handleSearch={handleSearch} />
-        {product?.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk daftar boikot</p>}
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-4 ">
-          {product?.map((data) => (
-            <ProductCard key={data._id} product={data} />
-          ))}
-        </div>
+        {product?.length === 0 && <p className="text-lg text-center text-white font-semibold mx-auto">Produk ini tidak masuk dalam daftar boikot</p>}
+        {showList ? (
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-4 ">
+            {product?.map((data) => (
+              <ProductCard key={data._id} product={data} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-lg text-center text-white font-semibold mx-auto">Cek produk yang masih mendukung penjajahan</p>
+        )}
       </div>
     </div>
   );
